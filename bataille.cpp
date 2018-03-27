@@ -1,30 +1,16 @@
 #include "bataille.hpp"
 
-bataille::bataille(joueur[] joueurs, jeu_de_cartes[] jeux)
-{
-	for (joueur j : joueurs)
-	{
-		joueurs_.push_back(j);
-	}
 
-	for (jeu_de_cartes jc : jeux)
-	{
-		jeux_.push_back(jc);
-	}
-}
-
-bataille::bataille(joueur[] joueurs)
+/*
+//création de la liste des joueurs à partir d'un tableau de leurs noms
+std::list<joueur> creer_liste_joueurs(std::string*[] & tab)
 {
-	for (joueur j : joueurs)
+  std::list<joueur> liste;
+  for (int i = 0; i <*(tab.size());i++)
 	{
-		joueurs_.push_back(j);
+	  jo.push_back(joueur::joueur(*(tab[i]));
+	  delete tab;
 	}
+  return liste;
 }
-
-bataille::bataille (jeu_de_cartes[] jeux)
-{
-	for (jeu_de_cartes jc : jeux)
-	{
-		jeux_.push_back(jc);
-	}
-}
+*/

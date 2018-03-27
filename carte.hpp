@@ -5,6 +5,7 @@
 #include <list>
 #include <string>
 
+
 typedef unsigned char t_code;
 
 // couleur des cartes
@@ -18,30 +19,29 @@ std::ostream& operator<<(std::ostream& os, const valeur_carte& valeur);
 std::list<valeur_carte> creer_liste_valeurs();
 
 // carte définie par sa couleur, sa valeur et le nom de son jeu d'origine
-class carte 
-{
-  private:
-    couleur_carte couleur_;  // couleur
-    valeur_carte valeur_;    // valeur
-    std::string nom_jeu_;    // nom du jeu
+class carte {
+public:
+  // constructeur
+  carte(const couleur_carte& couleur,
+	const valeur_carte& valeur,
+	const std::string& nom_jeu);
 
-    // protection contre la recopie
-    carte& operator=(carte& car) = delete;
-    carte(const carte& car) = delete;
+  // destructeur
+  ~carte();
 
-  public:
-    // constructeur
-    carte(const couleur_carte& couleur,
-    const valeur_carte& valeur,
-    const std::string& nom_jeu);
+  // accesseurs
+  couleur_carte couleur() const;
+  valeur_carte valeur() const;
+  const std::string& nom_jeu() const;
 
-    // destructeur
-    ~carte();
+private:
+  couleur_carte couleur_;  // couleur
+  valeur_carte valeur_;    // valeur
+  std::string nom_jeu_;    // nom du jeu
 
-    // accesseurs
-    couleur_carte couleur() const;
-    valeur_carte valeur() const;
-    const std::string& nom_jeu() const;
+  // protection contre la recopie
+  carte& operator=(carte& car) = delete;
+  carte(const carte& car) = delete;
 };
 
 // opérateur d'écriture sur un flot de sortie

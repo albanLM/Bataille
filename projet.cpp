@@ -1,13 +1,15 @@
 #include <ctime>
 #include <iostream>
 #include "carte.hpp"
-
+#include "joueur.hpp"
+#include "jeu_de_cartes.hpp"
+#include "bataille.hpp"
+#include "pioche.hpp"
+ 
 using namespace std;
 
 int main(void)
 {
-  
-  
   srand(time(0));
 
   ////////////////////////////////////////////////////////////////////////
@@ -45,6 +47,22 @@ int main(void)
     ++itc;
   }
   cout << endl;
+//TEST
+joueur jo1("francis");
+joueur jo2("félix");
+jo1.ajouter_carte(new carte (couleur_carte::Coeur, valeur_carte::Roi,""));
+cout <<jo1.nom() <<endl;
+cout << *(jo1.carte_au_sommet()) <<endl ;
+cout << jo1.nb_cartes() <<endl;
+carte * c = jo1.retirer_carte();
+cout << *(c)<< endl;
+c = jo1.retirer_carte();
+jo1.carte_au_sommet();
+jo2.ajouter_carte(c);
+cout << *(jo2.carte_au_sommet()) << endl;
 
   return 0;
 }
+
+
+
