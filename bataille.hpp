@@ -1,38 +1,22 @@
 #ifndef BATAILLE_HPP
 #define BATAILLE_HPP
-
+#include <list>
+#include <stack>
+#include <queue>
 #include "joueur.hpp"
-#include "pioche.hpp"
+#include "carte.hpp"
 #include "jeu_de_cartes.hpp"
+#include "pioche.hpp"
 
-class bataille 
-{
-	private:
-		std::vector<joueur> joueurs_;
-		std::vector<jeu_de_cartes> jeux_;
-		pioche pioche_;
 
-	public:
-		// Cosnstructeur
-		bataille(joueur[] joueur_, jeu_de_cartes[] jeux);
-		bataille(joueur[] joueur_);
-		bataille(jeu_de_cartes[] jeux);
+//std::list<joueur> creer_liste_joueurs(std::string*[] tab);
 
-		// Destructeur
-		~bataille();
+class bataille {
+public:
 
-		// Accesseurs
-		int nb_joueurs() const;
-		std::string gagnant() const;
-		int test_fin_partie() const;
+private:
+//std::list<joueur> jo;
 
-		// Méthodes
-		void ajouter_jeu(jeu_de_cartes& jeu);
-		void ajouter_joueur(joueur& jo);
-		void distribuer_cartes();
-		void reconstituer_jeux();
-		void commencer_une_partie(const int& nmax, const int& m);
-		void jouer_un_coup();
 };
 
 #endif
